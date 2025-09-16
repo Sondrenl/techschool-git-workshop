@@ -1,9 +1,12 @@
-/**
- * Function that greets a person
- * @param firstname First name
- * @param lastname Last name
- */
+const elements = [
+    { firstname: 'Arne', lastname: 'Arnesen' },
+    { firstname: 'Magnus', lastname: 'Magnusson' },
+    { firstname: 'Guri', lastname: 'Gurisen' },
+]
 
-export const greeting = (firstname: string, lastname: string) => {
-    console.log(`Hello ${firstname} ${lastname}`);
-};
+let createTable = () => {
+    const peopleTable = elements.map(({ firstname, lastname}) => {
+        return [firstname, lastname]
+    });
+    console.table(peopleTable, ["First name", "Last name"]);
+}
